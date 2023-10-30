@@ -8,7 +8,7 @@ const port = 3001;
 require("./db");
 
 app.use(cors({
-  origin :["https://stock-price-tracker-apiii.vercel.app/"], methods : ["POST", "GET"], credentials :true));
+  origin :["https://stock-price-tracker-apiii.vercel.app"], methods : ["POST", "GET"], credentials :true));
 app.use(express.json());
 app.use(cookieParser());
 
