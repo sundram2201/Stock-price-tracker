@@ -1,1 +1,1 @@
-export const BASE_URL = "http://192.168.1.40:3001/";
+export const BASE_URL = "https://stock-price-tracker-api-psi.vercel.app/";
