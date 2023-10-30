@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", function (req, res) {
-  res.send("Welcome to Portal....");
+  res.json("Welcome to Portal....");
 });
 
 app.use("/api/stocks", stockRoute);
