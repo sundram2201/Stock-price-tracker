@@ -52,22 +52,22 @@ const Stock = () => {
           <Col className='gutter-row' span={12}>
             <div className='heading'>
               <h1>{`${stockData?.company} (${stockData?.symbol})`}</h1>
-              <h3>About {stockData?.company}</h3>
-              <p>{stockData?.description}</p>
+              <h3>About {stockData?.company || "-"}</h3>
+              <p>{stockData?.description || "-"}</p>
             </div>
           </Col>
           <Col className='gutter-row descListKeys' span={6}>
             {descList.map((el, i) => {
               return (
                 <span key={i} style={{ fontWeight: "bold" }}>
-                  {el?.title}
+                  {el?.title || "-"}
                 </span>
               );
             })}
           </Col>
           <Col className='gutter-row descListVals' span={6}>
             {descList.map((el, i) => {
-              return <span key={i}>{el?.value}</span>;
+              return <span key={i}>{el?.value || "-"}</span>;
             })}
           </Col>
         </Row>
