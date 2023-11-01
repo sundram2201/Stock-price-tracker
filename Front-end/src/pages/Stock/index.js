@@ -30,8 +30,8 @@ const Stock = () => {
     { title: "Initial Price", value: stockData?.initial_price },
     { title: "Price in 2022 ($)", value: stockData?.price_2022 },
     { title: "Current price ($)", value: stockData?.current_price },
-    { title: "Price from 2022 (%)", value: <PriceChange value={stockData?.price_2022} /> },
-    { title: "Price from initial (%)", value: <PriceChange value={stockData?.price_2022} /> },
+    { title: "Price from 2022 (%)", value: <PriceChange value={stockData?.price_2022 || 0} /> },
+    { title: "Price from initial (%)", value: <PriceChange value={stockData?.price_2022 || 0} /> },
   ];
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Stock = () => {
         <Row gutter={24}>
           <Col className='gutter-row' span={12}>
             <div className='heading'>
-              <h1>{`${stockData?.company} (${stockData?.symbol})`}</h1>
+              <h1>{stockData?.company && stockData?.symbol ? `${stockData?.company} (${stockData?.symbol})` : "-"}</h1>
               <h3>About {stockData?.company || "-"}</h3>
               <p>{stockData?.description || "-"}</p>
             </div>
