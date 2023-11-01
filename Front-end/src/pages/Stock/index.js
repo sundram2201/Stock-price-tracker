@@ -30,8 +30,8 @@ const Stock = () => {
     { title: "Initial Price", value: stockData?.initial_price },
     { title: "Price in 2022 ($)", value: stockData?.price_2022 },
     { title: "Current price ($)", value: stockData?.current_price },
-    { title: "Price from 2022 (%)", value: <PriceChange value={stockData?.price_2022 || 0} /> },
-    { title: "Price from initial (%)", value: <PriceChange value={stockData?.price_2022 || 0} /> },
+    { title: "Price from 2022 (%)", value: <PriceChange value={stockData?.price_2022 ?? 0} /> },
+    { title: "Price from initial (%)", value: <PriceChange value={stockData?.price_2022 ?? 0} /> },
   ];
 
   useEffect(() => {
