@@ -25,9 +25,9 @@ export const getStockDesc = async (lastElement, setStockData) => {
   });
   try {
     if (res.status === 200) {
-      setStockData(res.data.data);
+      setStockData({ loading: false, data: res.data.data });
     }
   } catch (err) {
-    return err;
+    setStockData({ loading: false, data: null });
   }
 };
